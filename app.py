@@ -12,7 +12,7 @@ def hello():
     x = 0.0001
     for i in range(0, 1000000):
         x = x + math.sqrt(x)
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 @app.route('/health')
