@@ -1,6 +1,6 @@
 import os
 import math
-from flask import Flask, request
+from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
@@ -12,8 +12,7 @@ def hello():
     x = 0.0001
     for i in range(0, 1000000):
         x = x + math.sqrt(x)
-
-    return 'Hello version: %s, instance: %s\n' % (version, os.environ.get('HOSTNAME'))
+    return render_template("home.html")
 
 
 @app.route('/health')
