@@ -8,12 +8,11 @@ app = Flask(__name__)
 @app.route('/hello')
 def hello():
     version = os.environ.get('SERVICE_VERSION')
-
-    # do some cpu intensive computation
-    sleep(2)
-    x = 0.0001
-    for i in range(0, 1000000):
-        x = x + math.sqrt(x)
+#     do some cpu intensive computation
+#     sleep(2)
+#     x = 0.0001
+#     for i in range(0, 1000000):
+#         x = x + math.sqrt(x)
     return render_template("hello.html")
 
 
