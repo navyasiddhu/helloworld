@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: "2019-11-28T09:37:55Z"
+  labels:
+    app: hello-ctc-green
+  name: hello-ctc-green
+  namespace: ctc-devel
+  resourceVersion: "8546300"
+  selfLink: /api/v1/namespaces/ctc-devel/services/hello-ctc-green
+  uid: c1603b73-11c2-11ea-85e6-506b8d9f052c
+spec:
+  clusterIP: 172.30.137.79
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-ctc-green
+    deploymentconfig: hello-ctc-green
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,26 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  labels:
+    app: hello-ctc
+  name: hello-ctc-blue-bc
+  namespace: ctc-devel
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: hello-ctc-blue:latest
+  source:
+    git:
+      ref: canary
+      uri: https://github.com/navyasiddhu/helloworld.git
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:2.7
+        namespace: openshift
+    type: Source
